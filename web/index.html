@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dual Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Prototype-only controls, not part of the app. -->
+  <div class="proto">
+    <a href="#home">Home screen</a>
+    <a href="#app">App</a>
+    <span id="mode"></span>
+  </div>
+
+  <div class="phone">
+    <!-- Home Screen with the widget (iPhone SE medium widget: 321×148pt) -->
+    <section id="home" class="view">
+      <div class="widget">
+        <div class="pill" data-open="app">
+          <span class="logo">文A</span>
+          <span class="pill-text">Enter text</span>
+          <button class="icon" data-open="paste" data-icon="paste" aria-label="Paste"></button>
+        </div>
+        <div class="tiles">
+          <button class="tile" data-open="EN"><b>EN</b>English</button>
+          <button class="tile" data-open="ES"><b>ES</b>Spanish</button>
+          <button class="tile" data-open="CA"><b>CA</b>Catalan</button>
+        </div>
+      </div>
+      <div class="widget-name">Translator</div>
+    </section>
+
+    <!-- The app -->
+    <section id="app" class="view" hidden>
+      <main>
+        <div class="block">
+          <div class="label" id="src-label"></div>
+          <div class="input-row">
+            <textarea id="input" rows="1" placeholder="Enter text" spellcheck="false"></textarea>
+            <button class="icon" id="clear" data-icon="close" aria-label="Clear" hidden></button>
+          </div>
+          <button class="paste" id="paste"><span data-icon="paste"></span>Paste</button>
+          <p class="hint" id="paste-error" hidden></p>
+          <div class="actions" id="src-actions">
+            <button class="icon copy" data-icon="copy" aria-label="Copy"></button>
+          </div>
+        </div>
+        <hr>
+        <div class="block out">
+          <div class="label"></div>
+          <div class="text"></div>
+          <div class="actions">
+            <button class="icon copy" data-icon="copy" aria-label="Copy"></button>
+          </div>
+        </div>
+        <div class="block out">
+          <div class="label"></div>
+          <div class="text"></div>
+          <div class="actions">
+            <button class="icon copy" data-icon="copy" aria-label="Copy"></button>
+          </div>
+        </div>
+      </main>
+      <nav class="langs">
+        <button data-src="EN">English</button>
+        <button data-src="ES">Spanish</button>
+        <button data-src="CA">Catalan</button>
+      </nav>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
