@@ -1,7 +1,7 @@
 // Dev server for the web prototype: serves this folder and proxies /api/translate to DeepL
 // (DeepL doesn't allow calls straight from the browser).
 //
-//   node web/server.js            -> http://localhost:5173
+//   node web/server.js            -> http://localhost:5180
 //
 // API key: DEEPL_API_KEY env var, or a line `DEEPL_API_KEY=...` in web/.env.
 // Without a key it runs in mock mode so the UI can still be iterated on.
@@ -10,7 +10,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DIR = __dirname;
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 5180;
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript' };
 
 function loadKey() {
